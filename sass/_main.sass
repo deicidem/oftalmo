@@ -1,0 +1,87 @@
+.main
+  position: relative
+  overflow: hidden
+  padding-bottom: 50px
+  .container
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+  &-text
+    margin-left: 50px
+    // margin-bottom: 130px
+    max-width: 760px
+    &__title
+      line-height: 62px
+      margin: 0
+      font-family: "Gilroy-Black", sans-serif
+      font-weight: 900
+      font-size: $h1
+      color: $black
+      margin-bottom: 80px
+    &__button
+      cursor: pointer
+      position: relative
+      font-family: "Gilroy-Bold", sans-serif
+      line-height: 80px
+      font-size: $h2
+      color: #ffffff
+      background: $active_alt
+      border-radius: 50px
+      border: none
+      padding: 0 50px
+      z-index: 1
+      &::after
+        content: '' 
+        position: absolute
+        height: 100%
+        width: 100%
+        border-radius: 50px
+        background: rgba($active_alt, 0.8)
+        top: 4px
+        left: 0
+        z-index: -1
+  &-img
+    top: calc(50% + 50px)
+    transform: translateY(-50%)
+    position: absolute
+    right: 50px
+    width: 830px
+    z-index: -1
+  &-brends
+    margin-bottom: 20px
+    &__title
+      font-size: 18px
+      margin-bottom: 30px
+    &__list
+      display: flex
+      align-items: center
+      li
+        margin: 0
+        display: flex
+        align-items: center
+        span
+          margin: 0 30px
+          width: 1px
+          height: 20px
+          background: rgba($black, 0.5)
+        &:nth-child(1)
+          img
+            width: 75px
+        &:nth-child(2)
+          img
+            width: 255px
+        &:nth-child(3)
+          img
+            max-height: 40px
+        &:nth-child(4)
+          img
+            max-height: 40px
+        
+          
+
+
+        
+
+
+
