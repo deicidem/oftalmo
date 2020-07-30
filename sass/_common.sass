@@ -2,6 +2,10 @@ body
   margin: 0
   padding: 0
   font-family: "Gilroy-Regular", sans-serif
+ul
+  margin: 0
+  padding: 0
+  list-style: none
 img
   max-width: 100%
 .container
@@ -11,21 +15,25 @@ img
 button
   font-family: inherit
 .section
-  overflow: hidden
-  padding-top: 120px
-  padding-bottom: 220px
-  &:nth-child(odd)
-    background: $active_alt
-    color: #fff
+  overflow-y: visible
+  padding-top: 150px
+  padding-bottom: 160px
 .wave
-  fill: $active_alt
   position: absolute
   left: 0
-  width: 101%
+  width: 100%
+  overflow: hidden
   bottom: 0
+  transform: translateY(100%)
+  z-index: 3
+  svg
+    width: 101%
 .title
+  text-align: center
   font-size: $h2
   font-family: "Gilroy-Black", sans-serif
   font-weight: 900
   margin: 0
+  margin-bottom: 90px
+
     

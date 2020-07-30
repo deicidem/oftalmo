@@ -4,6 +4,12 @@ body {
   font-family: "Gilroy-Regular", sans-serif;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 img {
   max-width: 100%;
 }
@@ -19,29 +25,33 @@ button {
 }
 
 .section {
-  overflow: hidden;
-  padding-top: 120px;
-  padding-bottom: 220px;
-}
-
-.section:nth-child(odd) {
-  background: #6083ab;
-  color: #fff;
+  overflow-y: visible;
+  padding-top: 150px;
+  padding-bottom: 160px;
 }
 
 .wave {
-  fill: #6083ab;
   position: absolute;
   left: 0;
-  width: 101%;
+  width: 100%;
+  overflow: hidden;
   bottom: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  z-index: 3;
+}
+
+.wave svg {
+  width: 101%;
 }
 
 .title {
+  text-align: center;
   font-size: 30px;
   font-family: "Gilroy-Black", sans-serif;
   font-weight: 900;
   margin: 0;
+  margin-bottom: 90px;
 }
 
 .header {
@@ -133,8 +143,6 @@ button {
 
 .main {
   position: relative;
-  overflow: hidden;
-  padding-bottom: 50px;
 }
 
 .main .container {
@@ -255,7 +263,8 @@ button {
 
 .about {
   position: relative;
-  padding-top: 50px;
+  background: #6083ab;
+  color: #fff;
 }
 
 .about .container {
@@ -274,12 +283,58 @@ button {
           flex-direction: column;
 }
 
-.about-title {
-  margin-bottom: 100px;
-}
-
 .about-text {
   max-width: 700px;
   font-size: 20px;
+  margin: 0;
+}
+
+.footer {
+  background: #54535D;
+  color: #fff;
+  padding-bottom: 30px;
+}
+
+.footer-container {
+  max-width: 800px;
+}
+
+.footer-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 100px;
+}
+
+.footer-item__link {
+  display: block;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-item__days {
+  padding-top: 15px;
+  padding-left: 30px;
+  line-height: 1.5;
+}
+
+.footer-devs {
+  margin-bottom: 35px;
+}
+
+.footer-devs a {
+  color: #8BA2FF;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.footer-small {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
