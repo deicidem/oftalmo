@@ -24,21 +24,28 @@
       line-height: 80px
       font-size: $h2
       color: #ffffff
-      background: $active_alt
+      background: rgba(#1C4F88, 0.7)
       border-radius: 50px
       border: none
       padding: 0 50px
       z-index: 1
+      transition: 0.5s all ease-out
       &::after
+        transition: 0.5s all ease-out
         content: '' 
         position: absolute
         height: 100%
         width: 100%
         border-radius: 50px
-        background: rgba($active_alt, 0.8)
+        background: rgba(#1C4F88, 0.7)
         top: 4px
         left: 0
         z-index: -1
+      &:hover
+        background: $active_alt
+      &:hover:after
+        background: $active_alt
+
   &-img
     top: calc(50% + 50px)
     transform: translateY(-50%)

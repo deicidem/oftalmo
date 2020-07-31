@@ -181,23 +181,35 @@ button {
   line-height: 80px;
   font-size: 30px;
   color: #ffffff;
-  background: #6083ab;
+  background: rgba(28, 79, 136, 0.7);
   border-radius: 50px;
   border: none;
   padding: 0 50px;
   z-index: 1;
+  -webkit-transition: 0.5s all ease-out;
+  transition: 0.5s all ease-out;
 }
 
 .main-text__button::after {
+  -webkit-transition: 0.5s all ease-out;
+  transition: 0.5s all ease-out;
   content: '';
   position: absolute;
   height: 100%;
   width: 100%;
   border-radius: 50px;
-  background: rgba(96, 131, 171, 0.8);
+  background: rgba(28, 79, 136, 0.7);
   top: 4px;
   left: 0;
   z-index: -1;
+}
+
+.main-text__button:hover {
+  background: #6083ab;
+}
+
+.main-text__button:hover:after {
+  background: #6083ab;
 }
 
 .main-img {
