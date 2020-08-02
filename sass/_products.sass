@@ -1,5 +1,10 @@
 .products
   background: $active_alt
+  position: relative
+  padding-bottom: 50px
+  &-button
+    display: block
+    margin: 50px auto
   &-title
     color: #fff
     margin-bottom: 20px
@@ -75,8 +80,6 @@
       &:focus
         outline: none
         border: 1px solid $black
-
-
   &-subtitle
     color: #fff
     text-align: center
@@ -84,15 +87,31 @@
     font-size: $small
   &-items
     display: flex
-    justify-content: space-around
+    justify-content: space-between
     flex-wrap: wrap
+    padding: 0 50px
+    &_best
+      .products-item:nth-child(5)
+        margin-left: auto
+        margin-right: auto
+    &__title
+      display: flex
+      align-items: center
+      margin-bottom: 50px
+      &__text
+        font-size: 18px
+        margin: 0 10px
+        font-weight: 400
+      &__img
+        max-height: 40px
+
   &-icon
     font-size: 10px
     color: rgba($black, 0.5)
     cursor: pointer
   &-item
-    background: #fff
     width: 540px
+    height: 270px
     display: flex
     align-items: stretch
     border-radius: 20px
@@ -102,15 +121,18 @@
     &__img
       max-width: 180px
       img
+        height: 100%
         object-fit: cover
         vertical-align: middle
     &__content
-      width: 360px
+      width: 70%
       height: 100%
       display: flex
       flex-direction: column
       justify-content: space-between
     &__text
+      background: #fff
+      height: 210px
       padding: 10px 15px 30px 20px
     &__list
       padding-left: 10px
@@ -118,7 +140,7 @@
         position: relative
     &__button
       width: 100%
-      line-height: 60px
+      height: 60px
       border: none
       background: $active_alt
       color: #ffffff

@@ -42,9 +42,7 @@ export default {
     show(){
       if (this.pattern !== '') {
         let a = (this.info['Название']).toLowerCase().indexOf(this.pattern.toLowerCase());
-        if (a !== -1) {
-          return true;
-        } return false;
+        return a !== -1;
       } return true;
       
     }

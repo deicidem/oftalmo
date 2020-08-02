@@ -30,18 +30,16 @@ button {
 }
 
 .section {
-  overflow-y: visible;
   padding-top: 150px;
-  padding-bottom: 160px;
+  padding-bottom: 100px;
 }
 
 .wave {
-  display: none;
   position: absolute;
   left: 0;
   width: 100%;
   overflow: hidden;
-  bottom: 0;
+  bottom: 5px;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
   z-index: 3;
@@ -58,6 +56,44 @@ button {
   font-weight: 900;
   margin: 0;
   margin-bottom: 90px;
+}
+
+.button {
+  cursor: pointer;
+  position: relative;
+  font-family: "Gilroy-Bold", sans-serif;
+  line-height: 80px;
+  font-size: 30px;
+  color: #ffffff;
+  background: rgba(28, 79, 136, 0.7);
+  border-radius: 50px;
+  border: none;
+  padding: 0 50px;
+  z-index: 1;
+  -webkit-transition: 0.5s all ease-out;
+  transition: 0.5s all ease-out;
+}
+
+.button::after {
+  -webkit-transition: 0.5s all ease-out;
+  transition: 0.5s all ease-out;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  background: rgba(28, 79, 136, 0.7);
+  top: 4px;
+  left: 0;
+  z-index: -1;
+}
+
+.button:hover {
+  background: #6083ab;
+}
+
+.button:hover:after {
+  background: #6083ab;
 }
 
 .header {
@@ -180,44 +216,6 @@ button {
   margin-bottom: 80px;
 }
 
-.main-text__button {
-  cursor: pointer;
-  position: relative;
-  font-family: "Gilroy-Bold", sans-serif;
-  line-height: 80px;
-  font-size: 30px;
-  color: #ffffff;
-  background: rgba(28, 79, 136, 0.7);
-  border-radius: 50px;
-  border: none;
-  padding: 0 50px;
-  z-index: 1;
-  -webkit-transition: 0.5s all ease-out;
-  transition: 0.5s all ease-out;
-}
-
-.main-text__button::after {
-  -webkit-transition: 0.5s all ease-out;
-  transition: 0.5s all ease-out;
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border-radius: 50px;
-  background: rgba(28, 79, 136, 0.7);
-  top: 4px;
-  left: 0;
-  z-index: -1;
-}
-
-.main-text__button:hover {
-  background: #6083ab;
-}
-
-.main-text__button:hover:after {
-  background: #6083ab;
-}
-
 .main-img {
   top: calc(50% + 50px);
   -webkit-transform: translateY(-50%);
@@ -281,8 +279,8 @@ button {
 
 .about {
   position: relative;
-  background: #6083ab;
-  color: #fff;
+  color: #3e3e3e;
+  background: #fff;
 }
 
 .about .container {
@@ -307,8 +305,24 @@ button {
   margin: 0;
 }
 
+.about-blue {
+  color: #fff;
+  background: #6083ab;
+}
+
+.about-blue .wave svg path {
+  fill: #6083ab;
+}
+
 .products {
   background: #6083ab;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.products-button {
+  display: block;
+  margin: 50px auto;
 }
 
 .products-title {
@@ -437,10 +451,37 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding: 0 50px;
+}
+
+.products-items_best .products-item:nth-child(5) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.products-items__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+.products-items__title__text {
+  font-size: 18px;
+  margin: 0 10px;
+  font-weight: 400;
+}
+
+.products-items__title__img {
+  max-height: 40px;
 }
 
 .products-icon {
@@ -450,8 +491,8 @@ button {
 }
 
 .products-item {
-  background: #fff;
   width: 540px;
+  height: 270px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -470,13 +511,14 @@ button {
 }
 
 .products-item__img img {
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   vertical-align: middle;
 }
 
 .products-item__content {
-  width: 360px;
+  width: 70%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -491,6 +533,8 @@ button {
 }
 
 .products-item__text {
+  background: #fff;
+  height: 210px;
   padding: 10px 15px 30px 20px;
 }
 
@@ -504,7 +548,7 @@ button {
 
 .products-item__button {
   width: 100%;
-  line-height: 60px;
+  height: 60px;
   border: none;
   background: #6083ab;
   color: #ffffff;
