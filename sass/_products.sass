@@ -3,6 +3,80 @@
   &-title
     color: #fff
     margin-bottom: 20px
+  &-form 
+    font-size: 18px
+    margin-bottom: 50px
+    display: flex
+    align-items: center
+    &__group
+      display: flex
+      align-items: center
+      position: relative
+      margin-right: 40px
+      .fas
+        position: absolute
+        right: 10px
+        top: 50%
+        transform: translateY(-50%)
+        transition: all 0.3s ease-out
+        
+        &_active
+          transform: translateY(-50%) rotateX(180deg)
+    &__select
+      overflow: hidden
+      // display: none
+      width: 190px
+      position: absolute
+      display: flex
+      flex-direction: column
+      background: #f6f6f6
+      right: 0
+      top: 100%
+      border-radius: 0 0 10px 10px
+      border: 1px solid #dcdcdc
+      box-shadow: 0 5px 5px rgba($black, 0.25)        
+      input
+        display: none
+      label
+        padding: 5px 0
+        width: 100%
+        text-align: center
+        &:hover
+          background: darken(#f6f6f6,  10)
+          cursor: pointer
+      &_value
+        position: relative
+        cursor: pointer
+        margin-left: 5px
+        border-radius: 10px
+        border: 1px solid #dcdcdc
+        background: #f6f6f6
+        font-family: inherit
+        text-transform: lowercase
+        font-size: 18px
+        padding: 10px 0
+        width: 190px
+        text-align: center
+        &:focus
+          outline: none
+          border: 1px solid $black
+        
+    &__input
+      margin-left: 5px
+      line-height: 40px
+      width: 350px
+      padding-left: 20px
+      padding-right: 50px
+      border: 1px solid #dcdcdc
+      border-radius: 10px
+      background: #f6f6f6
+      font-size: 18px
+      font-family: inherit
+      &:focus
+        outline: none
+        border: 1px solid $black
+
+
   &-subtitle
     color: #fff
     text-align: center
@@ -40,6 +114,8 @@
       padding: 10px 15px 30px 20px
     &__list
       padding-left: 10px
+      li
+        position: relative
     &__button
       width: 100%
       line-height: 60px
@@ -55,3 +131,18 @@
       font-family: "Gilroy-Black", sans-serif
       font-weight: 900
       margin: 0
+    &__descr
+      top: -20px
+      display: block
+      position: absolute
+      background: #fff
+      z-index: 1
+      border: 1px solid rgba($black, 0.5)
+      border-radius: 10px
+      padding: 10px
+      box-shadow: 0 5px 5px rgba($black, 0.35)
+  &_all
+    background: #fff
+    .products-title
+      color: $black
+      margin-bottom: 100px
