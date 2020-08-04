@@ -199,6 +199,11 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.main .wave {
+  bottom: 50px;
 }
 
 .main-text {
@@ -227,7 +232,8 @@ button {
 }
 
 .main-brends {
-  margin-bottom: 20px;
+  position: relative;
+  z-index: 4;
 }
 
 .main-brends__title {
@@ -318,6 +324,10 @@ button {
   background: #6083ab;
   position: relative;
   padding-bottom: 50px;
+}
+
+.products_best {
+  margin-top: -50px;
 }
 
 .products-button {

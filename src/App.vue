@@ -1,6 +1,6 @@
 <template>
 <div>
-  <section id="products" class="section products">
+  <section id="products" class="section products products_best">
     <h2 class="title products-title">Лучший выбор</h2>
     <div class="container">
       <div class="products-subtitle">
