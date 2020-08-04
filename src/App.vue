@@ -17,7 +17,7 @@
       </svg>
     </div>
   </section>
-  <section class="section products products_all" v-if="true">
+  <section class="section products products_all" v-if="showCatalogue">
     <h2 class="title products-title">Лучший выбор</h2>
     <div class="container">
       <form class="products-form">
@@ -39,52 +39,57 @@
           <i class="fas fa-search"></i>
         </div>
       </form>
-      <div class="products-items__wrapper" v-show="showFab(productsByFabs['alcon'])">
-        <div class="products-items__title">
-          <img src="./assets/alcon.svg" alt="" class="products-items__title__img">
-          <h3 class="products-items__title__text">(Alcon)</h3>
-          <i class="products-icon fas fa-question-circle"></i>
-          <span class="products-items__title__descr">asdfasdf</span>
-        </div>
-        <div class="products-items">
-          <app-product :pattern="searchBy" v-for="item in productsByFabs['alcon']" :key="item.id" :info="item"></app-product>
-        </div>
+      <div class="products-items" v-if="showAll">
+        <app-product :pattern="searchBy" v-for="item in products" :key="item.id" :info="item"></app-product>
       </div>
-      <div class="products-items__wrapper" v-show="showFab(productsByFabs['bausch and lomb'])">
-        <div class="products-items__title">
-          <img src="./assets/bausch.svg" alt="" class="products-items__title__img">
-          <h3 class="products-items__title__text">(Bausch and Lomb)</h3>
-          <i class="products-icon fas fa-question-circle"></i>
-          <span class="products-items__title__descr">asdfasdf</span>
+      <template v-else>
+        <div class="products-items__wrapper" v-show="showFab(productsByFabs['alcon'])">
+          <div class="products-items__title">
+            <img src="./assets/alcon.svg" alt="" class="products-items__title__img">
+            <h3 class="products-items__title__text">(Alcon)</h3>
+            <i class="products-icon fas fa-question-circle"></i>
+            <span class="products-items__title__descr">asdfasdf</span>
+          </div>
+          <div class="products-items">
+            <app-product :pattern="searchBy" v-for="item in productsByFabs['alcon']" :key="item.id" :info="item"></app-product>
+          </div>
         </div>
-        <div class="products-items">
-          <app-product :pattern="searchBy" v-for="item in productsByFabs['bausch and lomb']" :key="item.id" :info="item"></app-product>
+        <div class="products-items__wrapper" v-show="showFab(productsByFabs['bausch and lomb'])">
+          <div class="products-items__title">
+            <img src="./assets/bausch.svg" alt="" class="products-items__title__img">
+            <h3 class="products-items__title__text">(Bausch and Lomb)</h3>
+            <i class="products-icon fas fa-question-circle"></i>
+            <span class="products-items__title__descr">asdfasdf</span>
+          </div>
+          <div class="products-items">
+            <app-product :pattern="searchBy" v-for="item in productsByFabs['bausch and lomb']" :key="item.id" :info="item"></app-product>
+          </div>
         </div>
-      </div>
-      <div class="products-items__wrapper" v-show="showFab(productsByFabs['zeiss'])">
-        <div class="products-items__title">
-          <img src="./assets/zeiss.svg" alt="" class="products-items__title__img">
-          <h3 class="products-items__title__text">(Zeiss)</h3>
-          <i class="products-icon fas fa-question-circle"></i>
-          <span class="products-items__title__descr">asdfasdf</span>
+        <div class="products-items__wrapper" v-show="showFab(productsByFabs['zeiss'])">
+          <div class="products-items__title">
+            <img src="./assets/zeiss.svg" alt="" class="products-items__title__img">
+            <h3 class="products-items__title__text">(Zeiss)</h3>
+            <i class="products-icon fas fa-question-circle"></i>
+            <span class="products-items__title__descr">asdfasdf</span>
+          </div>
+          <div class="products-items">
+            <app-product :pattern="searchBy" v-for="item in productsByFabs['zeiss']" :key="item.id" :info="item"></app-product>
+          </div>
         </div>
-        <div class="products-items">
-          <app-product :pattern="searchBy" v-for="item in productsByFabs['zeiss']" :key="item.id" :info="item"></app-product>
+        <div class="products-items__wrapper" v-show="showFab(productsByFabs['oculentis'])">
+          <div class="products-items__title">
+            <img src="./assets/oculentis.jpg" alt="" class="products-items__title__img">
+            <h3 class="products-items__title__text">(Oculentis)</h3>
+            <i class="products-icon fas fa-question-circle"></i>
+            <span class="products-items__title__descr">asdfasdf</span>
+          </div>
+          <div class="products-items">
+            <app-product :pattern="searchBy" v-for="item in productsByFabs['oculentis']" :key="item.id" :info="item"></app-product>
+          </div>
         </div>
-      </div>
-      <div class="products-items__wrapper" v-show="showFab(productsByFabs['oculentis'])">
-      <div class="products-items__title">
-        <img src="./assets/oculentis.jpg" alt="" class="products-items__title__img">
-        <h3 class="products-items__title__text">(Oculentis)</h3>
-        <i class="products-icon fas fa-question-circle"></i>
-        <span class="products-items__title__descr">asdfasdf</span>
-      </div>
-      <div class="products-items">
-        <app-product :pattern="searchBy" v-for="item in productsByFabs['oculentis']" :key="item.id" :info="item"></app-product>
-      </div>
+      </template>
     </div>
-    </div>
-    
+
     <div class="wave">
       <svg viewBox="0 0 1122 88" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 43.5021C0 43.5021 255 120.504 560.75 43.5021C866.5 -33.5 1121.5 43.5021 1121.5 43.5021V0H0V43.5021Z" fill="#fff" />
@@ -118,7 +123,10 @@ export default {
     AppProductList
   },
   computed: {
-    ...mapGetters(['products', 'productsByFabs'])
+    ...mapGetters(['products', 'productsByFabs']),
+    showAll() {
+      return this.sortBy !== 'производителю' ? true : false;
+    }
   },
   methods: {
     search(e) {
@@ -141,7 +149,7 @@ export default {
         return true;
       }
       return false;
-      
+
     }
   },
   created() {
