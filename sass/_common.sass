@@ -11,7 +11,7 @@ ul
 img
   max-width: 100%
 .container
-  padding: 0 15px
+  padding: 0 20px
   margin: 0 auto
   max-width: 1400px
 button
@@ -38,6 +38,7 @@ button
   margin: 0
   margin-bottom: 90px
 .button
+  display: block
   cursor: pointer
   position: relative
   font-family: "Gilroy-Bold", sans-serif
@@ -65,3 +66,17 @@ button
     background: $active_alt
   &:hover:after
     background: $active_alt
+
+@media screen and ( max-width:  768px)
+  .button
+    padding: 0 44px
+    line-height: 52px
+    font-size: 20px
+  .section
+    padding-top: 70px
+    padding-bottom: 50px
+  .title
+    font-size: 20px
+    margin-bottom: 25px
+  .wave
+    bottom: 1px

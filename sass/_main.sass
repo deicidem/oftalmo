@@ -7,13 +7,13 @@
     justify-content: space-between
     padding-bottom: 50px
   .wave
-    bottom: 50px
+    bottom: 52px
   &-text
     margin-left: 50px
     // margin-bottom: 130px
     max-width: 760px
     &__title
-      line-height: 62px
+      line-height: 1.2
       margin: 0
       font-family: "Gilroy-Black", sans-serif
       font-weight: 900
@@ -58,10 +58,45 @@
           img
             max-height: 40px
         
-          
+@media screen and ( max-width: 768px)
+  .main
+    .wave
+      bottom: 1px
+    .container
+      justify-content: flex-start
+      height: auto
+      padding-top: 110px
+      padding-bottom: 30px
+    &-text
+      margin-left: 0
+      margin-bottom: 50px
+      &__title
+        font-size: 25px
+        margin-bottom: 0
+      &__button
+        margin: 0 auto
+    &-img
+      position: relative
+      transform: none
+      top: auto
+      right: auto
+      margin: 0 auto
 
 
-        
-
-
-
+@media screen and ( max-width: 565px )
+  .main
+    &-brends
+      &__title
+        margin-bottom: 10px
+        font-size: 16px
+      &__list
+        flex-wrap: wrap
+        justify-content: center
+        li
+          margin-bottom: 30px
+          span
+            margin: 0 20px
+          &:nth-child(2)
+            order: 4
+            span
+              display: none

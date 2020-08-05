@@ -6,10 +6,8 @@
       <h3 class="products-item__title">{{info['Название']}}</h3>
       <div class="products-item__subtitle">{{info['Слоган']}}</div>
       <ul class="products-item__list">
-        <li v-for="(item, index) in table"
-          :key="index"
+        <li v-for="(item, index) in table" :key="index"
           @mouseenter="item.hover = true" 
-          @click="item.hover = !item.hover" 
           @mouseleave="item.hover = false">
           {{item.name}}: {{item.value}}
           <template v-if="item.description !== ''">
@@ -18,6 +16,7 @@
           </template>
         </li>
       </ul>
+    <div class="products-item__img_mobile"><img src="img/product.jpg" alt=""></div>
     </div>
     <button class="products-item__button">Купить</button>
   </div>

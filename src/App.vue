@@ -25,12 +25,12 @@
           <div for="form-select">Сортировка по</div>
           <div class="products-form__select_value" @click="showSelect = !showSelect">{{sortBy}}<i class="fas fa-angle-down" :class="showSelect ? 'fas_active' : ''"></i></div>
           <div v-if="showSelect" class="products-form__select">
-            <input id="selectName0" @change="showSelect = false" type="radio" value="производителю" v-model="sortBy">
-            <label for="selectName0">производителю</label>
-            <input id="selectName1" @change="showSelect = false" type="radio" value="цене" v-model="sortBy">
-            <label for="selectName1">цене</label>
-            <input id="selectName2" @change="showSelect = false" type="radio" value="популярности" v-model="sortBy">
-            <label for="selectName2">популярности</label>
+            <input id="opt0" @change="showSelect = false" type="radio" value="производителю" v-model="sortBy">
+            <label for="opt0">производителю</label>
+            <input id="opt1" @change="showSelect = false" type="radio" value="цене" v-model="sortBy">
+            <label for="opt1">цене</label>
+            <input id="opt2" @change="showSelect = false" type="radio" value="популярности" v-model="sortBy">
+            <label for="opt2">популярности</label>
           </div>
         </div>
         <div class="products-form__group">
@@ -43,48 +43,14 @@
         <app-product :pattern="searchBy" v-for="item in products" :key="item.id" :info="item"></app-product>
       </div>
       <template v-else>
-        <div class="products-items__wrapper" v-show="showFab(productsByFabs['alcon'])">
+        <div class="products-items__wrapper" v-for="(fabric, index) in fabrics" :key="index" v-show="showFab(fabric.products)">
           <div class="products-items__title">
-            <img src="./assets/alcon.svg" alt="" class="products-items__title__img">
-            <h3 class="products-items__title__text">(Alcon)</h3>
-            <i class="products-icon fas fa-question-circle"></i>
-            <span class="products-items__title__descr">asdfasdf</span>
+            <div class="products-items__title__img"><img :src="fabric.img" alt="" ></div>
+            <h3 @mouseenter="fabric.hover = true" @mouseleave="fabric.hover = false" class="products-items__title__text">({{fabric.name}})<i class="products-icon fas fa-question-circle"></i></h3>
+            <span v-show="fabric.hover" class="products-items__title__descr">{{fabric.descr}}</span>
           </div>
           <div class="products-items">
-            <app-product :pattern="searchBy" v-for="item in productsByFabs['alcon']" :key="item.id" :info="item"></app-product>
-          </div>
-        </div>
-        <div class="products-items__wrapper" v-show="showFab(productsByFabs['bausch and lomb'])">
-          <div class="products-items__title">
-            <img src="./assets/bausch.svg" alt="" class="products-items__title__img">
-            <h3 class="products-items__title__text">(Bausch and Lomb)</h3>
-            <i class="products-icon fas fa-question-circle"></i>
-            <span class="products-items__title__descr">asdfasdf</span>
-          </div>
-          <div class="products-items">
-            <app-product :pattern="searchBy" v-for="item in productsByFabs['bausch and lomb']" :key="item.id" :info="item"></app-product>
-          </div>
-        </div>
-        <div class="products-items__wrapper" v-show="showFab(productsByFabs['zeiss'])">
-          <div class="products-items__title">
-            <img src="./assets/zeiss.svg" alt="" class="products-items__title__img">
-            <h3 class="products-items__title__text">(Zeiss)</h3>
-            <i class="products-icon fas fa-question-circle"></i>
-            <span class="products-items__title__descr">asdfasdf</span>
-          </div>
-          <div class="products-items">
-            <app-product :pattern="searchBy" v-for="item in productsByFabs['zeiss']" :key="item.id" :info="item"></app-product>
-          </div>
-        </div>
-        <div class="products-items__wrapper" v-show="showFab(productsByFabs['oculentis'])">
-          <div class="products-items__title">
-            <img src="./assets/oculentis.jpg" alt="" class="products-items__title__img">
-            <h3 class="products-items__title__text">(Oculentis)</h3>
-            <i class="products-icon fas fa-question-circle"></i>
-            <span class="products-items__title__descr">asdfasdf</span>
-          </div>
-          <div class="products-items">
-            <app-product :pattern="searchBy" v-for="item in productsByFabs['oculentis']" :key="item.id" :info="item"></app-product>
+            <app-product :pattern="searchBy" v-for="item in fabric.products" :key="item.id" :info="item"></app-product>
           </div>
         </div>
       </template>
@@ -113,9 +79,7 @@ export default {
       showSelect: false,
       searchBy: '',
       showCatalogue: false,
-      fabrics: [{
-        name: 'Alcon',
-      }]
+      fabrics: []
     }
   },
   components: {
@@ -154,6 +118,34 @@ export default {
   },
   created() {
     this.$store.dispatch('setProducts');
+    this.fabrics = [{
+          name: 'Alcon',
+          descr: 'Описание',
+          hover: false,
+          img: './img/alcon.svg',
+          products: this.productsByFabs['alcon']
+        },
+        {
+          name: 'Bausch and Lomb',
+          descr: 'Описание',
+          hover: false,
+          img: './img/bausch.svg',
+          products: this.productsByFabs['bausch and lomb']
+        },
+        {
+          name: 'Zeiss',
+          descr: 'Описание',
+          hover: false,
+          img: './img/zeiss.svg',
+          products: this.productsByFabs['zeiss']
+        },
+        {
+          name: 'Oculentis',
+          descr: 'Описание',
+          hover: false,
+          img: './img/oculentis.jpg',
+          products: this.productsByFabs['oculentis']
+        }]
   }
 }
 </script>
