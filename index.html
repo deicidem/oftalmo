@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
+<!DOCTYPE html><html lang="ru"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>oftalmo</title>
-</head>
-
-<body>
+</head><body>
 
   <header class="header">
+    <img src="img/header-svg.svg" class="header-svg">
+    <div class="header-bg"></div>
     <div class="container">
       <div class="header-logo"><img src="img/Logo.svg" alt="Офтальмо груп"></div>
       <div class="header-menu">
@@ -35,7 +32,7 @@
       <div class="header_mobile">
         <div class="header_mobile-menu">
           <nav>
-            <ul class="header-menu__list">
+            <ul class="header_mobile-menu__list header-menu__list">
               <li><a href="#main">Главная</a></li>
               <li><a href="#about">О нас</a></li>
               <li><a href="#products">Каталог</a></li>
@@ -63,7 +60,7 @@
         <div class="main-brends__title">Наши бренды:</div>
         <ul class="main-brends__list">
           <li><img class="main-brends__img" src="img/alcon.svg" alt="Alcon"><span></span></li>
-          <li><img class="main-brends__img" src="img/bausch.svg" alt="Bausch & Lomb"><span></span></li>
+          <li><img class="main-brends__img" src="img/bausch.svg" alt="Bausch &amp; Lomb"><span></span></li>
           <li><img class="main-brends__img" src="img/zeiss.svg" alt="Zeiss"><span></span></li>
           <li><img class="main-brends__img" src="img/oculentis.jpg" alt="Oculentis"></li>
         </ul>
@@ -71,12 +68,17 @@
     </div>
     <div class="wave">
       <svg viewBox="0 0 1122 88" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 43.5021C0 43.5021 255 120.504 560.75 43.5021C866.5 -33.5 1121.5 43.5021 1121.5 43.5021V0H0V43.5021Z"
-          fill="#fff" />
+        <path d="M0 43.5021C0 43.5021 255 120.504 560.75 43.5021C866.5 -33.5 1121.5 43.5021 1121.5 43.5021V0H0V43.5021Z" fill="#fff"></path>
       </svg>
     </div>
-
+    <div class="wave_m">
+      <svg  viewBox="0 0 472 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0.5V10.5C83.6667 23.6667 282.5 42.5 471.5 10.5V0.5H0Z" fill="#ffffff"/>
+        </svg>
+        
+    </div>
   </main>
+  
   <div id="app"></div>
   
   <section id="about" class="section about">
@@ -89,9 +91,14 @@
     </div>
     <div class="wave">
       <svg viewBox="0 0 1122 88" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 43.5021C0 43.5021 255 120.504 560.75 43.5021C866.5 -33.5 1121.5 43.5021 1121.5 43.5021V0H0V43.5021Z"
-          fill="#fff" />
+        <path d="M0 43.5021C0 43.5021 255 120.504 560.75 43.5021C866.5 -33.5 1121.5 43.5021 1121.5 43.5021V0H0V43.5021Z" fill="#fff"></path>
       </svg>
+    </div>
+    <div class="wave_m">
+      <svg  viewBox="0 0 472 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0.5V10.5C83.6667 23.6667 282.5 42.5 471.5 10.5V0.5H0Z" fill="#ffffff"/>
+        </svg>
+        
     </div>
   </section>
   
@@ -127,5 +134,4 @@
     </div>
   </footer>
   <script src="dist/build.js"></script>
-</body>
-</html>
+</body></html>

@@ -16,6 +16,12 @@
         <path d="M0 43.5021C0 43.5021 255 120.504 560.75 43.5021C866.5 -33.5 1121.5 43.5021 1121.5 43.5021V0H0V43.5021Z" fill="#6083ab" />
       </svg>
     </div>
+    <div class="wave_m">
+      <svg  viewBox="0 0 472 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0.5V10.5C83.6667 23.6667 282.5 42.5 471.5 10.5V0.5H0Z" fill="#6083ab"/>
+        </svg>
+        
+    </div>
   </section>
   <section class="section products products_all" v-if="showCatalogue">
     <h2 class="title products-title">Лучший выбор</h2>
@@ -60,6 +66,12 @@
       <svg viewBox="0 0 1122 88" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 43.5021C0 43.5021 255 120.504 560.75 43.5021C866.5 -33.5 1121.5 43.5021 1121.5 43.5021V0H0V43.5021Z" fill="#fff" />
       </svg>
+    </div>
+    <div class="wave_m">
+      <svg  viewBox="0 0 472 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0.5V10.5C83.6667 23.6667 282.5 42.5 471.5 10.5V0.5H0Z" fill="#ffffff"/>
+        </svg>
+        
     </div>
   </section>
 </div>

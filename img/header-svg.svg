@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="906" height="100" viewBox="0 0 906 100">
+  <defs>
+    <clipPath id="clip-path">
+      <rect x="609" y="2020" width="906" height="100" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Группа_прокрутки_1" data-name="Группа прокрутки 1" transform="translate(-609 -2020)" clip-path="url(#clip-path)" style="isolation: isolate">
+    <circle id="Эллипс_4" data-name="Эллипс 4" cx="1060" cy="1060" r="1060" fill="#1c4f88" opacity="0.7"/>
+  </g>
+</svg>

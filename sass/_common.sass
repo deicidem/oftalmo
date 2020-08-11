@@ -30,6 +30,8 @@ button
   z-index: 3
   svg
     width: 101%
+  &_m
+    display: none
 .title
   text-align: center
   font-size: $h2
@@ -79,4 +81,22 @@ button
     font-size: 20px
     margin-bottom: 25px
   .wave
+    display: none
     bottom: 1px
+    &_m
+      // display: none
+      display: block
+      position: absolute
+      left: 0
+      width: 100%
+      overflow: hidden
+      bottom: 5px
+      transform: translateY(100%)
+      z-index: 3
+      svg
+        width: 101%
+
+@media screen and ( min-width: 320px )
+  .container
+    // max-width: 320px
+  
